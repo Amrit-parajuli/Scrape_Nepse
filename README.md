@@ -27,4 +27,4 @@ This project is a simple web scraper for retrieving stock prices and percentage 
 
 ```bash
 git clone https://github.com/yourusername/stock_scraper.git
-cd stock_scraper
+cd Scrape_Nepse
