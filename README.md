@@ -11,9 +11,9 @@ This project is a simple web scraper for retrieving stock prices and percentage 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/stock_scraper.git
-cd stock_scraper
-# Stock Scraper
+git clone https://github.com/Amrit-parajuli/Scrape_Nepse.git
+cd Scrape_Nepse
+# Nepse Scraper
 
 This project is a simple web scraper for retrieving stock prices and percentage changes from the website [merolagani.com](https://merolagani.com/LatestMarket.aspx).
 
@@ -26,5 +26,5 @@ This project is a simple web scraper for retrieving stock prices and percentage 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/stock_scraper.git
+git clone https://github.com/Amrit-parajuli/Scrape_Nepse.git
 cd Scrape_Nepse
