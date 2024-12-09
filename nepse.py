@@ -12,25 +12,32 @@ api_key = os.getenv('API_KEY')
 
 @app.route('/')
 def scrape_stocks():
-    url = 'https://merolagani.com/LatestMarket.aspx'
+    url = "https://www.sharesansar.com/today-share-price"
+
+# Send a GET request to fetch the webpage
     response = requests.get(url)
     if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
-        table = soup.find('table', class_='table table-hover live-trading sortable')
-        
+        soup = BeautifulSoup(response.content, "html.parser")
+    
+    # Locate the table
+        table = soup.find("table", id="headFixed")
+    
+    # Ensure the table is found
         if table:
-            headers = [header.text.strip() for header in table.find_all('th')]
+        # Iterate through table rows and extract "Prev. Close" column
+            rows = table.find("tbody").find_all("tr")
+        
             data = []
-            
-            rows = table.find_all('tr')[1:]  # Skipping the header row
             for row in rows:
-                columns = row.find_all('td')
-                if len(columns) >= 8:  
-                    stock_symbol = columns[0].text.strip()  # Stock symbol is in the first column
-                    pclose_price = columns[5].text.strip()
-                    percentage_change = columns[2].text.strip()
-                    # Append data to the list
-                    data.append([stock_symbol, pclose_price, percentage_change])
+            # Find all cells in the row
+                cells = row.find_all("td")
+            
+            # The "Prev. Close" column is the 9th column (index 8)
+                if len(cells) > 8:
+                    prev_close = cells[9].text.strip()
+                    stock_symbol=cells[1].text.strip()
+                    percentage_change=cells[14].text.strip()
+                    data.append([stock_symbol, prev_close, percentage_change])
             
             # Create a DataFrame
             df = pd.DataFrame(data, columns=['Stock Symbol', 'PClose', 'Percentage Change'])
