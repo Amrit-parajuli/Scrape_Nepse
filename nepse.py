@@ -22,17 +22,15 @@ def scrape_stocks():
     # Locate the table
         table = soup.find("table", id="headFixed")
     
-    # Ensure the table is found
+  
         if table:
-        # Iterate through table rows and extract "Prev. Close" column
-            rows = table.find("tbody").find_all("tr")
         
+            rows = table.find("tbody").find_all("tr")
             data = []
             for row in rows:
-            # Find all cells in the row
                 cells = row.find_all("td")
             
-            # The "Prev. Close" column is the 9th column (index 8)
+            
                 if len(cells) > 8:
                     prev_close = cells[9].text.strip()
                     stock_symbol=cells[1].text.strip()
