@@ -40,7 +40,7 @@ def scrape_stocks():
                     data.append([stock_symbol, prev_close, percentage_change])
             
             # Create a DataFrame
-            df = pd.DataFrame(data, columns=['Stock Symbol', 'PClose', 'Percentage Change'])
+            df = pd.DataFrame(data, columns=['Stock_Symbol', 'PClose', 'Percentage_Change'])
             
             # Convert DataFrame to JSON
             json_data = df.to_dict(orient='records')
