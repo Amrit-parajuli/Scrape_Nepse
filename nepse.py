@@ -12,7 +12,7 @@ api_key = os.getenv('API_KEY')
 
 @app.route('/')
 def scrape_stocks():
-    url = "https://www.sharesansar.com/today-share-price"
+    url = "https://www.sharesansar.com/live-trading"
 
 # Send a GET request to fetch the webpage
     response = requests.get(url)
