@@ -34,7 +34,7 @@ def scrape_stocks():
                 if len(cells) > 8:
                     prev_close = cells[9].text.strip()
                     stock_symbol=cells[1].text.strip()
-                    percentage_change=cells[14].text.strip()
+                    percentage_change=cells[4].text.strip()
                     data.append([stock_symbol, prev_close, percentage_change])
             
             # Create a DataFrame
