@@ -1,6 +1,6 @@
 # Stock Scraper
 
-This project is a simple web scraper for retrieving stock prices and percentage changes from the website [merolagani.com](https://www.sharesansar.com/live-trading).
+This project is a simple web scraper for retrieving stock prices and percentage changes from the website [sharesansar.com](https://www.sharesansar.com/live-trading).
 
 ## Requirements
 
